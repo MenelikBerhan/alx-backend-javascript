@@ -7,7 +7,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       const resp = [];
 
       resp.push({ status: res1.status, value: res1.status === 'fulfilled' ? res1.value : res1.reason });
-      resp.push({ status: res2.status, value: res2.status === 'fulfilled' ? res2.value : res1.reason });
+      resp.push({ status: res2.status, value: res2.status === 'fulfilled' ? res2.value : res2.reason });
 
       return (resp);
     });
