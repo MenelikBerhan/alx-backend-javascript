@@ -32,14 +32,16 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 
-// function isDirector(employee: Teacher | Director): boolean {
-//   return employee instanceof Director;
-// }
-// function executeWork(employee: Teacher | Director): void {
-//   if (isDirector(employee)) console.log((employee as Director).workDirectorTasks());
-//   else console.log((employee as Teacher).workTeacherTasks());
-// }
+/* OPTIONAL - w/o using type predicate (using instanceof)
+function isDirector(employee: Teacher | Director): boolean {
+  return employee instanceof Director;
+}
+function executeWork(employee: Teacher | Director): void {
+  if (isDirector(employee)) console.log((employee as Director).workDirectorTasks());
+  else console.log((employee as Teacher).workTeacherTasks());
+} */
 
+// Using type predicate for Director
 function isDirector(employee: Teacher | Director): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
