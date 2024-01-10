@@ -53,3 +53,12 @@ function executeWork(employee: Teacher | Director): void {
 
 executeWork(createEmployee(200));
 executeWork(createEmployee(1000));
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  return `Teaching ${todayClass}`;
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
