@@ -1,5 +1,5 @@
 // read inputs from CLI
-const readline = require('node:readline');
+const readline = require('readline');
 
 const r1 = readline.createInterface({
   input: process.stdin,
