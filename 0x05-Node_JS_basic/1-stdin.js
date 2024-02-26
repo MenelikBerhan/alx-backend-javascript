@@ -7,7 +7,7 @@ const r1 = readline.createInterface({
 });
 
 r1.question('Welcome to Holberton School, what is your name?\n', (name) => {
-  r1.write(`Your name is: ${name}\n`);
-  if (!process.stdin.isTTY) r1.write('This important software is now closing\n');
+  console.log(`Your name is: ${name}\n`);
+  if (!process.stdin.isTTY) console.log('This important software is now closing\n');
   // r1.close();
 });
