@@ -51,11 +51,14 @@ const app = http.createServer((req, res) => { // callback attached to app.on('re
         res.setHeader('Content-Type', 'text/html');
         res.setHeader('Content-Length', data.length);
         res.end(data);
+      })
+      .catch(() => {
+        const data = 'This is the list of our students\nCannot load the database';
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('Content-Length', data.length);
+        res.end(data);
       });
-    // .catch(() => {
-    //   res.statusCode = 500; // internal server error (couldn't read from csv file)
-    //   res.end();
-    // });
   }
 });
 
