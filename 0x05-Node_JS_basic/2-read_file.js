@@ -7,7 +7,7 @@ function countStudents(path) {
     throw new Error('Cannot load the database');
   }
   // fileter out first line (column names) and empty last line
-  const studentList = fs.readFileSync(path, { encoding: 'utf-8' }).split('\n')
+  const studentList = fs.readFileSync(path, { encoding: 'utf-8' }).trim().split('\n')
     .filter((value, index) => value !== '' && index !== 0);
   // stores <field_name>:<students_list> as key value pair
   const fieldDict = {};
