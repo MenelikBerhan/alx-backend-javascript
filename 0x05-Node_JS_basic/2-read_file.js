@@ -15,12 +15,14 @@ function countStudents(path) {
   for (const line of lines) {
     const field = line.split(',')[3];
     const name = line.split(',')[0];
-    if (fields[field]) {
-      fields[field] = [...fields[field], name];
-    } else {
-      fields[field] = [];
-      fields[field].push(name);
-    }
+    if (!Object.hasOwn(fields, field)) fields[field] = [];
+    fields[field].push(name);
+    // if (fields[field]) {
+    //   fields[field] = [...fields[field], name];
+    // } else {
+    //   fields[field] = [];
+    //   fields[field].push(name);
+    // }
   }
   console.log(`Number of students: ${lines.length}`);
   for (const field of Object.keys(fields)) {
