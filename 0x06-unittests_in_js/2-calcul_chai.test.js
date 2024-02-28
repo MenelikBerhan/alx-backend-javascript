@@ -1,6 +1,6 @@
 // test for calculateNumber function
 const { expect } = require('chai');
-const calculateNumber = require('./2-calcul');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber(type, a, b)', function () {
   describe('type === SUM', function () {
