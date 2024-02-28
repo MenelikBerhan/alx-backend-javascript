@@ -5,10 +5,8 @@ const sendPaymentRequestToApi = require('./5-payment');
 
 describe('sendPaymentRequestToApi', function () {
   const logSpy = sinon.spy(console, 'log'); // spy tracks log method
-  // beforeEach(function beforeTestHook() {
-  //   logSpy.resetHistory();
-  // });
-  afterEach(function afterTestHook() {
+  // reset logSpy's history before each test
+  beforeEach(function beforeTestHook() {
     logSpy.resetHistory();
   });
 
@@ -19,5 +17,6 @@ describe('sendPaymentRequestToApi', function () {
   it('Logs correct information to console.', function () {
     sendPaymentRequestToApi(10, 10);
     expect(logSpy.calledOnceWithExactly('The total is: 20')).to.equal(true);
+    logSpy.restore();
   });
 });
