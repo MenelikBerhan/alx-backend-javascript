@@ -6,7 +6,7 @@ const sendPaymentRequestToApi = require('./3-payment');
 
 describe('sendPaymentRequestToApi', function () {
   it('Calls Utils.calculateNumber with right arguments.', function () {
-    const spy = sinon.spy(Utils, 'calculateNumber'); // spy fully imitates calculateNumber method
+    const spy = sinon.spy(Utils, 'calculateNumber'); // spy tracks execution of calculateNumber method
     sendPaymentRequestToApi(100, 20);
     expect(spy.calledOnceWithExactly('SUM', 100, 20)).to.equal(true);
     expect(spy.returnValues[0]).to.equal(120);
