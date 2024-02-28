@@ -14,9 +14,11 @@ class StudentsController {
         for (const field of sortedFields) {
           data.push(`Number of students in ${field}: ${fieldDict[field].length}. List: ${fieldDict[field].join(', ')}`);
         }
-        return response.send(data.join('\n'));
+        response.send(data.join('\n'));
       })
-      .catch(() => response.status(500).send('Cannot load the database')); // send an internal server error
+      .catch(() => {
+        response.status(500).send('Cannot load the database');
+      }); // send an internal server error
   }
 
   static getAllStudentsByMajor(request, response) {
@@ -24,8 +26,14 @@ class StudentsController {
     if (['CS', 'SWE'].includes(major)) {
       const filePath = process.argv[2];
       readDatabase(filePath)
-        .then((fieldDict) => response.send(`List: ${fieldDict[major].join(', ')}`))
-        .catch(() => response.status(500).send('Cannot load the database')); // send an internal server error
+        .then((fieldDict) => {
+          response.send(`List: ${fieldDict[major].join(', ')}`);
+        })
+        .catch(() => {
+          response.status(500).send('Cannot load the database');
+        }); // send an internal server error
+    } else {
+      response.status(500).send('Major parameter must be CS or SWE');
     }
   }
 }
