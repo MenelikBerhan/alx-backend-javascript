@@ -1,4 +1,3 @@
-// /* eslint-disable consistent-return */
 // simple function to be tested using mocha
 
 // round a & b to nearest integer and return sum
