@@ -18,7 +18,8 @@ describe('sendPaymentRequestToApi', function () {
     sendPaymentRequestToApi(100, 20);
     expect(logSpy.calledOnceWithExactly('The total is: 120')).to.equal(true);
   });
-  it('Logs correct information to console.', function () {
+
+  it('Logs correct information to console 2.', function () {
     sendPaymentRequestToApi(10, 10);
     expect(logSpy.calledOnceWithExactly('The total is: 20')).to.equal(true);
   });
