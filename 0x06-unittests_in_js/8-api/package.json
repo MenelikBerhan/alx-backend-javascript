@@ -1,13 +1,16 @@
 {
-  "name": "0x06-unittests_in_js",
+  "name": "8-api",
   "version": "1.0.0",
-  "description": "Unittest in js",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
-  "author": "Menelik_Berhan",
+  "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -15,6 +18,7 @@
     "eslint-plugin-mocha": "^6.2.2",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
+    "request": "^2.88.0",
     "sinon": "^7.5.0"
   }
 }
