@@ -22,7 +22,7 @@ describe('Api', function () {
         if (err) done(err);
         else {
           expect(res.statusCode, 'Status code should be 200').to.equal(200);
-          expect(body, 'Right message returned').to.equal('Payment methods for cart :1');
+          expect(body, 'Right message returned').to.equal('Payment methods for cart 1');
           done();
         }
       });

@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 // id must be a digit (\d). '\' should be escaped
 app.get('/cart/:id(\\d+)', (req, res) => {
-  res.send(`Payment methods for cart :${req.params.id}`);
+  res.send(`Payment methods for cart ${req.params.id}`);
 });
 
 app.listen(port, () => {
