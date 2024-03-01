@@ -22,6 +22,7 @@ module.exports = {
     'prefer-arrow-callback': 'off',
     'consistent-return': 'off',
     'no-console': 'off',
+    'no-unused-expressions': 'off',
   },
   overrides: [
     {
